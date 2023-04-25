@@ -65,12 +65,6 @@ include("funciones/conexion_bd.php");
                         </td>
                     </tr>
                 </section>
-                <section class="blocks"> 
-                    <td class="labels">Fecha ingreso: </td>
-                    <td align="center">
-                        <input type="date" name="fechaingreso" required />
-                    </td>
-                </section>
                 </tr>
                 <section class="blocks"> 
                     <tr>
@@ -92,9 +86,8 @@ include("funciones/conexion_bd.php");
                                 <td>Titulo</td>
                                 <td>Tematica</td>
                                 <td>Autor</td>
-                                <td>Cantidad</td>
                                 <td>Grupo</td>
-                                <td>Fecha de Ingreso</td>
+                                <td>Cantidad</td>
                             </tr>
 
                             <?php
@@ -108,7 +101,6 @@ include("funciones/conexion_bd.php");
                                 echo '<td>'.$busqueda[3].'</td>';
                                 echo '<td>'.$busqueda[4].'</td>';
                                 echo '<td>'.$busqueda[5].'</td>';
-                                echo '<td>'.$busqueda[6].'</td>';
                                 echo'</tr>';
                             }
                             ?>
