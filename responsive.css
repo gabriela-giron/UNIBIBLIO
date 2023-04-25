@@ -1,0 +1,112 @@
+
+.return {
+    margin: 2rem 0 0 2rem;
+}
+
+.insertar {
+    margin-top: 1rem;
+}
+
+.insertar .titulo h1{
+    font-family: 'DM Serif Display', serif;
+    text-align: center;
+    font-size: 72px;
+    color: #D9AA52;
+    margin: 0;
+}
+
+.insertar .blocks {
+    text-align: center;
+    margin: 1.5rem;
+    font-family: Calisto MT;
+    font-size: 24px;
+    
+}
+
+.blocks input{
+    border-radius: 30px;
+    color: #BFB1A4;
+    padding: 12px 12px;
+    border: 2px solid #BFB1A4;
+    font-size: 14px;
+    font-family: Calisto MT;
+    margin-left: 0.5rem;
+    width: 20%;
+}
+
+.blocks #cantidad{
+    border-radius: 30px;
+    color: #BFB1A4;
+    padding: 12px 12px;
+    border: 2px solid #BFB1A4;
+    font-size: 14px;
+    font-family: Calisto MT;
+    margin-left: 0.5rem;
+    width: 10%;
+}
+
+.blocks select{
+    width: 20%;
+    background-color: #73675C;
+    font-family: Calisto MT;
+    color: #F2F2F2;
+    padding: 12px 12px;
+    border-radius: 30px;
+}
+
+.blocks .principal{
+    width: 10%;
+    background-color: #BFB1A4;
+    font-family: Calisto MT;
+    color: #F2F2F2;
+    padding: 12px 12px;
+    border-radius: 30px;
+}
+
+.blocks .principal .title{
+    text-decoration: none;
+    color: #F2F2F2;
+}
+
+.blocks .principal:hover{
+    transition: 0.5s;
+    background-color: #73675C;
+}
+
+.insertar .section_tabla {
+    display: flex;
+    justify-content: center;
+}
+
+.insertar .fondo_tabla{
+    margin: 4rem;
+    padding: 2rem;
+    text-align: center;
+    background: #CCC2F2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+.insertar .fondo_tabla .tabla{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    background-color: #F2F2F2;
+    padding: 4rem;
+    font-family: Calisto MT;
+    font-size: 18px;
+}
+
+.insertar .fondo_tabla .tabla table{
+    border-collapse: collapse;
+    width: 10px;
+}
+
+.insertar .fondo_tabla .tabla table th{
+    color: #D9AA52;
+    padding: 10px;
+}
+
+.insertar .fondo_tabla .tabla table td{
+    padding: 10px;
+}
+
