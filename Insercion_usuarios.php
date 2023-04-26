@@ -74,7 +74,7 @@ include("funciones/conexion_bd.php");
                             <select name="id_grupo">
                                 <option value="1">Estudiante</option>
                                 <option value="2">Profesor</option>
-                                <option value="3">Investigador</option>
+                                <option value="3">Externo</option>
                             </select>
                         </td>
                     </td>
