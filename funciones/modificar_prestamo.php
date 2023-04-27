@@ -8,6 +8,7 @@
 
         if ($status==NULL || $idprestamo==NULL) {
             echo "<script>alert('No se admiten campos vacíos');</script>";
+            echo '<script>window.location.href = "http://localhost/UNIBIBLIO/modificacion_prestamo.php";</script>';
             
         }else{
             $consulta="UPDATE BD_UNIBIBLIO.LISTA_PRESTAMOS SET ESTATUS='".$status."' WHERE ID_PRESTAMO=".$idprestamo;
