@@ -78,7 +78,7 @@ include("funciones/conexion_bd.php");
                     
                 </section>
                 <section class="blocks">
-                    <td>Fechas</td>
+                    
                     <td class="labels">Fecha prestamo: </td>
                         <input type="date" name="fecha_sol" required />
                     </td>
