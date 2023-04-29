@@ -28,16 +28,16 @@
 
             if (!$exec_modificar) {
                 echo '<script>swal.fire("Error", "Error al modificar el libro", "error").then(() => {
-                    window.location.href = "../modificacion_libros.php";
+                    window.location.href = "../index_libros.php";
                 });</script>';
             } else {
                 echo '<script>swal.fire("Éxito", "Libro modificado con éxito", "success").then(() => {
-                    window.location.href = "../modificacion_libros.php";
+                    window.location.href = "../index_libros.php";
                 });</script>';
             }
         } else {
             echo '<script>swal.fire("Error", "El libro no existe", "error").then(() => {
-                window.location.href = "../modificacion_libros.php";
+                window.location.href = "../index_libros.php";
             });</script>';
         }
     }
