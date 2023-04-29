@@ -35,33 +35,107 @@
             <h1 class="titulo">Control de Libros</h1>
             <nav class="options">
                 <ul class="list">
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></li>
+                    <li class="btn">
+                        <button onclick="document.getElementById('id01').style.display='block'" class="user">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
+                    </li>
+                    <div id="id01" class="w3-modal">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-closebtn w3-hover-red w3-container w3-padding-hor-8 w3-display-topright">&times;</span>
+                        <div class="w3-modal-content w3-card-8 w3-animate-top" style="max-width:600px">
+
+                            <form method="POST" class="form">
+                                <div class="search">
+                                    <h5>Buscar libro</h5>
+                                    <p class="info">Ingrese codigo de libro</p>
+                                    <input type="text" id="codigo" name="codigo" placeholder="id libro">
+                                    <button type="submit" class="principal" name="btn-busqueda">buscar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                     <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></li>
                 </ul>
             </nav>
             <ul class="list">
                 <li class="btn"><a href="Insercion_libros.php">agregar libro</a></li>
-                <li class="btn"><a href="#">editar libro</a></li>
-                <li class="btn"><a href="#">solvencia</a></li>
+                <li class="btn"><a href="modificacion_libros.php">editar libro</a></li>
             </ul>
         </div>
         <div class="section_tabla">
                 <div class="fondo_tabla">
                     <div class="tabla">
-                        <table align="center" border="1">
-                            <tr>
-                                <td>Identificador</td>
-                                <td>Titulo</td>
-                                <td>Tematica</td>
-                                <td>Autor</td>
-                                <td>Descripcion</td>
-                                <td>Cantidad</td>
-                            </tr>
+                        <?php
+                       
+                       if (isset($_POST['btn-busqueda'])){
 
-                            <?php
-                            $valores="SELECT * FROM LISTA_LIBROS";
-                            $ejecutar=mysqli_query($conn,$valores);
-                            while ($busqueda=mysqli_fetch_array($ejecutar)){
+                           $codigo = $_POST['codigo'];
+
+                           if($codigo > 0){
+                                $consulta = "SELECT * FROM LISTA_LIBROS WHERE ID_LIBRO = " . $codigo . ";";
+                               $resultado = $conn->query($consulta);
+                   
+                           // Verificar si la consulta devuelve resultados
+                               if (mysqli_num_rows($resultado) > 0) {
+                                    echo "<table border='1' align='center'>
+                                    <tr>
+                                        <td>Identificador</td>
+                                        <td>Titulo</td>
+                                        <td>Tematica</td>
+                                        <td>Autor</td>
+                                        <td>Descripcion</td>
+                                        <td>Cantidad</td>
+                                    </tr>";
+                                    while ($busqueda = mysqli_fetch_array($resultado)) {
+                                        echo '<tr>';
+                                        echo '<td>'.$busqueda[0].'</td>';
+                                        echo '<td>'.$busqueda[1].'</td>';
+                                        echo '<td>'.$busqueda[2].'</td>';
+                                        echo '<td>'.$busqueda[3].'</td>';
+                                        echo '<td>'.$busqueda[4].'</td>';
+                                        echo '<td>'.$busqueda[5].'</td>';
+                                        echo'</tr>';
+                                    }
+                                    echo "</table>";
+                               }
+
+                           }else{
+                               $consulta = "SELECT * FROM LISTA_LIBROS;";
+                                   $resultado = mysqli_query($conn, $consulta);
+                                   echo "<table border='1' align='center'>
+                                            <tr>
+                                                <td>Identificador</td>
+                                                <td>Titulo</td>
+                                                <td>Tematica</td>
+                                                <td>Autor</td>
+                                                <td>Descripcion</td>
+                                                <td>Cantidad</td>
+                                            </tr>";
+                                   while ($busqueda = mysqli_fetch_array($resultado)) {
+                                    echo '<tr>';
+                                    echo '<td>'.$busqueda[0].'</td>';
+                                    echo '<td>'.$busqueda[1].'</td>';
+                                    echo '<td>'.$busqueda[2].'</td>';
+                                    echo '<td>'.$busqueda[3].'</td>';
+                                    echo '<td>'.$busqueda[4].'</td>';
+                                    echo '<td>'.$busqueda[5].'</td>';
+                                    echo'</tr>';
+                                   }
+                                   echo "</table>";
+                           }
+                       }else{
+                            $consulta = "SELECT * FROM LISTA_LIBROS;";
+                            $resultado = mysqli_query($conn, $consulta);
+                            echo "<table border='1' align='center'>
+                                    <tr>
+                                        <td>Identificador</td>
+                                        <td>Titulo</td>
+                                        <td>Tematica</td>
+                                        <td>Autor</td>
+                                        <td>Descripcion</td>
+                                        <td>Cantidad</td>
+                                    </tr>";
+                            while ($busqueda = mysqli_fetch_array($resultado)) {
                                 echo '<tr>';
                                 echo '<td>'.$busqueda[0].'</td>';
                                 echo '<td>'.$busqueda[1].'</td>';
@@ -70,9 +144,10 @@
                                 echo '<td>'.$busqueda[4].'</td>';
                                 echo '<td>'.$busqueda[5].'</td>';
                                 echo'</tr>';
-                            }
-                            ?>
-                        </table>
+                                }
+                                echo "</table>";
+                        }
+                   ?>
                     </div>
                 </div> 
             </div>
