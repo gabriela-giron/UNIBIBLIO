@@ -66,11 +66,9 @@ include("funciones/conexion_bd.php");
                     <td>Grupo</td>
                     <td colspan="2" align="center">
                         <select name="id_grupo">
-                            <option value="1">Fantasía</option>
-                            <option value="2">Historia</option>
-                            <option value="3">Misterio</option>
-                            <option value="4">Tecnología</option>
-                            <option value="5">Romance</option>
+                            <option value="1">Unicen</option>
+                            <option value="2">Unitesis</option>
+                            <option value="3">UniRev</option>
                         </select>
                     </td>
                 </section>
