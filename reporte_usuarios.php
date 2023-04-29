@@ -15,16 +15,28 @@ try {
     
 
     // Ejecutar la consulta SQL
-    $sql = "SELECT * FROM BD_UNIBIBLIO.USUARIO";
+    $sql = "SELECT * FROM USUARIO";
     $resultado = mysqli_query($conexion, $sql);
 
     // Verificar si la consulta devuelve resultados
     if (mysqli_num_rows($resultado) > 0) {
         // Construir la tabla HTML para mostrar los datos de la tabla de libros
         $html = '<html><body>';
-        $html .= '<h1>Usuarios Agregados</h1>';
-        $html .= '<table>';
-        $html .= '<tr><th>ID</th><th>Nombre</th><th>Apellido</th><th>DPI</th><th>Telefono</th><th>Correo</th><th>Domicilio</th><th>Libros prestados</th><th>Deuda</th<th>Estatus</th><th>Grupo</th></tr>';
+        $html .= '<h1>Usuarios Agregados Recientemente</h1>';
+        $html .= "<table border='1' align='center'>
+                <tr>
+                    <th>ID Usuario</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>DPI</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th>Domicilio</th>
+                    <th>Libros Prestados</th>
+                    <th>Deuda</th>
+                    <th>Estatus</th>
+                    <th>Grupo</th>
+                </tr>";
         
         // Recorrer los resultados de la consulta y mostrar los datos de cada registro
         while ($fila = $resultado->fetch_assoc()) {
@@ -43,7 +55,6 @@ try {
             $html .= '</tr>';
         } 
         
-        $html .= '</table>';
         $html .= '</body></html>';
 
         $dompdf->loadHtml($html);
