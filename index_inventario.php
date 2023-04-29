@@ -40,8 +40,8 @@
                 </ul>
             </nav>
             <ul class="list">
-                <li class="btn"><a href="#">agregar prestamo</a></li>
-                <li class="btn"><a href="#">editar prestamo</a></li>
+                <li class="btn"><a href="Insercion_prestamo.php">agregar prestamo</a></li>
+                <li class="btn"><a href="modificacion_prestamo.php">editar prestamo</a></li>
             </ul>
         </div>
         <div class="section_tabla">
