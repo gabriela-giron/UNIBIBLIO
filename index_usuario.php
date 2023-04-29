@@ -93,7 +93,7 @@
             </nav>
             <ul class="list">
                 <li class="btn"><a href="Insercion_usuarios.php">agregar usuario</a></li>
-                <li class="btn"><a href="modificar_usuario.php">modificar usuario</a></li>
+                <li class="btn"><a href="modificacion_usuarios.php">modificar usuario</a></li>
                 <li class="btn">
                     <button onclick="document.getElementById('id01').style.display='block'" class="user">
                         <a href="#">solvencia</a>
